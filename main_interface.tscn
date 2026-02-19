@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://citogd8qd5qqj"]
+
+[ext_resource type="Texture2D" uid="uid://c7fuyn13r3hof" path="res://lace-bg.jpg" id="1_3wdv7"]
+[ext_resource type="Script" uid="uid://dcldjs8bbsfcw" path="res://main_interface.gd" id="1_rhs15"]
+[ext_resource type="Texture2D" uid="uid://cpxufyuj7saao" path="res://calico-critter.jpg" id="2_v57av"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v57av"]
+texture = ExtResource("1_3wdv7")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njsmb"]
+bg_color = Color(0.47726208, 0.6310914, 0.29168543, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.49411765, 0.5176471, 0.25882354, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v57av"]
+bg_color = Color(0.57628095, 0.7489145, 0.36792687, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.49411765, 0.5176471, 0.25882354, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhs15"]
+bg_color = Color(0.27733058, 0.6355397, 0.66567385, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.14410007, 0.5387948, 0.6917404, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rhs15"]
+texture = ExtResource("2_v57av")
+
+[node name="MainInterface" type="Node2D" unique_id=560387525]
+script = ExtResource("1_rhs15")
+
+[node name="Panel" type="Panel" parent="." unique_id=1538380736]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_v57av")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=840382035]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 668.0
+offset_top = 119.0
+offset_right = 1100.0
+offset_bottom = 539.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=949302840]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8235294, 0.9647059, 0.6, 1)
+theme_override_colors/font_pressed_color = Color(0.150356, 0.588548, 0.64429134, 1)
+theme_override_colors/font_hover_color = Color(0.7176471, 0.9019608, 0.36862746, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_njsmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v57av")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhs15")
+text = "give food"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1323455245]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.82406014, 0.96440727, 0.59946716, 1)
+theme_override_colors/font_pressed_color = Color(0.150356, 0.588548, 0.64429134, 1)
+theme_override_colors/font_hover_color = Color(0.7176471, 0.9019608, 0.36862746, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_njsmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v57av")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhs15")
+text = "go to sleep"
+
+[node name="Label" type="Label" parent="." unique_id=825405910]
+offset_left = 53.0
+offset_top = 83.0
+offset_right = 542.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0.12712538, 0.17434978, 0.03385671, 1)
+theme_override_font_sizes/font_size = 51
+text = "mimi is feeling tired"
+
+[node name="mimi" type="Panel" parent="." unique_id=342399587]
+offset_left = 122.0
+offset_top = 179.0
+offset_right = 480.20648
+offset_bottom = 523.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rhs15")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_food_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_sleep_pressed"]
