@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://citogd8qd5qqj"]
+
+[ext_resource type="Script" uid="uid://dcldjs8bbsfcw" path="res://scripts/main_interface.gd" id="1_rgrph"]
+[ext_resource type="Texture2D" uid="uid://dl42cygs2x7ms" path="res://images/sleepy.jpeg" id="2_grylp"]
+[ext_resource type="Script" uid="uid://cgc15bixic1bx" path="res://scripts/sleep_button.gd" id="3_jarby"]
+[ext_resource type="Script" uid="uid://ceiinhmfw4yl2" path="res://scripts/nothing_button.gd" id="4_vejak"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njsmb"]
+bg_color = Color(0.47726208, 0.6310914, 0.29168543, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.49411765, 0.5176471, 0.25882354, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v57av"]
+bg_color = Color(0.57628095, 0.7489145, 0.36792687, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.49411765, 0.5176471, 0.25882354, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhs15"]
+bg_color = Color(0.27733058, 0.6355397, 0.66567385, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.14410007, 0.5387948, 0.6917404, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="main-interface" type="Node2D" unique_id=560387525]
+script = ExtResource("1_rgrph")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1158407272]
+offset_right = 720.0
+offset_bottom = 480.0
+
+[node name="mimi" type="Sprite2D" parent="ColorRect" unique_id=886092282]
+position = Vector2(159, 202.00003)
+scale = Vector2(0.2342414, 0.23278603)
+texture = ExtResource("2_grylp")
+
+[node name="SleepButton" type="Button" parent="ColorRect" unique_id=1323455245 node_paths=PackedStringArray("mimi")]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 393.0
+offset_right = 266.0
+offset_bottom = 444.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.82406014, 0.96440727, 0.59946716, 1)
+theme_override_colors/font_pressed_color = Color(0.150356, 0.588548, 0.64429134, 1)
+theme_override_colors/font_hover_color = Color(0.7176471, 0.9019608, 0.36862746, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_njsmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v57av")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhs15")
+text = "go to sleep"
+script = ExtResource("3_jarby")
+mimi = NodePath("../mimi")
+
+[node name="NothingButton" type="Button" parent="ColorRect" unique_id=1348536725]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 395.0
+offset_right = 628.0
+offset_bottom = 446.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.82406014, 0.96440727, 0.59946716, 1)
+theme_override_colors/font_pressed_color = Color(0.150356, 0.588548, 0.64429134, 1)
+theme_override_colors/font_hover_color = Color(0.7176471, 0.9019608, 0.36862746, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_njsmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v57av")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rhs15")
+text = "do nothing"
+script = ExtResource("4_vejak")
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=825405910]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 185.0
+offset_right = 631.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "mimi is feeling tired"
+
+[connection signal="pressed" from="ColorRect/SleepButton" to="ColorRect/SleepButton" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/NothingButton" to="ColorRect/NothingButton" method="_on_pressed"]
