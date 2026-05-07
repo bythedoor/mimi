@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drcgay7rjbwdr"]
 
-[ext_resource type="Script" uid="uid://cw6e8ncodi3p4" path="res://scripts/main-menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cw6e8ncodi3p4" path="res://scripts/title_screen.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://m153bf2okpxj" path="res://images/title-screen-background.jpg" id="2_ekxnf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
@@ -51,7 +51,7 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.23137255, 0.047058824, 0.08627451, 1)
 
-[node name="main-menu" type="Control" unique_id=875105921]
+[node name="TitleScreen" type="Control" unique_id=875105921]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
