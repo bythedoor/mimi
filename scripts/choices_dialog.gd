@@ -37,9 +37,3 @@ func initButtons():
 			choices_list.add_child(choice_default.duplicate())
 			choices_list.get_child(index).text = choices[index]
 			choices_list.get_child(index).pressed.connect(onChoice.bind(index))
-		
-		
-		
-		
-		
-	

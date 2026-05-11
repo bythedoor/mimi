@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mimi"
-run/main_scene="uid://drcgay7rjbwdr"
+run/main_scene="uid://1b8irndtq3vb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

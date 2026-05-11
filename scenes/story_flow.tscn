@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7qv1sft1juba"]
+
+[ext_resource type="Script" uid="uid://b3nha1few0eal" path="res://scripts/story_node.gd" id="1_l42gl"]
+
+[node name="StartStory" type="Node" unique_id=586664525]
+script = ExtResource("1_l42gl")
+metadata/_custom_type_script = "uid://b3nha1few0eal"
+
+[node name="SleepyMimi" type="Node" parent="." unique_id=96596049]
+script = ExtResource("1_l42gl")
+text = "mimi is feeling tired"
+choices = Array[String](["GoToSleep", "DoNothing"])
+metadata/_custom_type_script = "uid://b3nha1few0eal"
+
+[node name="WentToSleep" type="Node" parent="SleepyMimi" unique_id=144941170]
+script = ExtResource("1_l42gl")
+metadata/_custom_type_script = "uid://b3nha1few0eal"

@@ -1,5 +1,6 @@
 extends Control
 
+@onready var storyScreen = $"../StoryScreen"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,9 @@ func _process(delta: float) -> void:
 	pass
 
 func play():
-	get_tree().change_scene_to_file("res://scenes/main_interface.tscn")
-
+	self.visible = false
+	storyScreen.visible = true
+	storyScreen.startStory()
+	
 func quit_game():
 	get_tree().quit()
