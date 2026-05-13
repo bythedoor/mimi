@@ -12,3 +12,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_play_pressed() -> void:
+	titleScreen.visible = false
+	storyScreen.visible = true
+	
+	storyScreen.startStory()
+
+
+func _on_end_of_story() -> void:
+	titleScreen.visible = true
+	storyScreen.visible = false

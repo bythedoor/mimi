@@ -2,16 +2,19 @@
 
 [ext_resource type="Script" uid="uid://b3nha1few0eal" path="res://scripts/story_node.gd" id="1_l42gl"]
 
-[node name="StartStory" type="Node" unique_id=586664525]
-script = ExtResource("1_l42gl")
-metadata/_custom_type_script = "uid://b3nha1few0eal"
-
-[node name="SleepyMimi" type="Node" parent="." unique_id=96596049]
+[node name="Start the Story" type="Node" unique_id=586664525]
 script = ExtResource("1_l42gl")
 text = "mimi is feeling tired"
-choices = Array[String](["GoToSleep", "DoNothing"])
+choices = Array[String](["go to sleep", "do nothing"])
 metadata/_custom_type_script = "uid://b3nha1few0eal"
 
-[node name="WentToSleep" type="Node" parent="SleepyMimi" unique_id=144941170]
+[node name="Go To Sleep" type="Node" parent="." unique_id=446316907]
 script = ExtResource("1_l42gl")
+text = "mimi has fallen asleep"
+metadata/_custom_type_script = "uid://b3nha1few0eal"
+
+[node name="Do Nothing" type="Node" parent="." unique_id=722366270]
+script = ExtResource("1_l42gl")
+text = "You did nothing"
+jumpToNode = "."
 metadata/_custom_type_script = "uid://b3nha1few0eal"

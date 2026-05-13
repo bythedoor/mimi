@@ -6,7 +6,7 @@ signal SELECTED(index)
 @onready var choice_default = $"MarginContainer/Choices/ChoiceButton"
 
 # list of choices available to the player
-var choices:
+var choices:Array[String]:
 	set(value):
 		choices = value
 		initButtons()
